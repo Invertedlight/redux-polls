@@ -1,20 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 
-
-class PlayerStats extends React.Component {
-	render() {
+export default PlayerStats ({ avatar, avatar, answered }) {
 		return (
-			<li>
-			<img src="" alt='' />
-				<div>
-					<h2>Player Name</h2>
-					<p> polls</p>
-					<p> answers</p>
+			<div>
+				<div className='row'>
+					<img src="" alt='' />
+					<div className='column'>
+						<h2>{name}</h2>
+						<p>{answered.reduce(total, poll)}</p>
+						<p> answers</p>
+					</div>
 				</div>
-			</li>
+			</div>
 			)
-	}
-}
+	};
 
-export default PlayerStats
+
+PlayerStats.propTypes = {
+	avatar.PropType = 
+}

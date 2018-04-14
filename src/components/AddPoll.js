@@ -3,7 +3,7 @@ import React from 'react'
 class AddPoll extends React.Component {
 	render () {
 		return (
-			<div>
+			<div >
 				<form className='add-form'>
 					<h3>What is your question?</h3>
 					<input className='input' type='text' name='question' value='' placeholder='Enter in your question' />
