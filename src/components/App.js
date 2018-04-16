@@ -1,28 +1,41 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import '../css/index.css';
-import Nav from './Nav'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
+import LoadingBar from 'react-redux-loading'
 import Leaderboard from './Leaderboard'
-import AddPoll from './AddPoll'
-import Home from './Home'
+
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import '../css/index.css';
+// import Nav from './Nav'
+// import Leaderboard from './Leaderboard'
+// import AddPoll from './AddPoll'
+// import Home from './Home'
+import Dashboard from './Dashboard'
 
 
 class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className='container'>
-          <Nav />
+  componentDidMount () {
+    this.props.dispatch(handleInitialData())
+    
+    }
 
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/leaderboard' component={Leaderboard} />
-            <Route path='/add-poll' component={AddPoll} />
-          </Switch>
-        </div>
-      </Router>
+  render() {
+    console.log("App RENDER PROPS: ", this.props)
+    return (
+      <div>
+        <LoadingBar />
+        {this.props.loading === true 
+          ? null 
+          : <Leaderboard />}
+      </div>
     )
   }
 }
 
-export default App;
+function mapStateToProps ({ authedUser }) {
+   return {
+    loading: authedUser === null,
+  }
+}
+
+export default connect(mapStateToProps)(App)
