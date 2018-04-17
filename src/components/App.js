@@ -32,8 +32,8 @@ class App extends Component {
             ? null 
             : <div>
                 <Route path='/' exact component={Dashboard} />
-                <Route path='/Leaderboard' component={Leaderboard} />
-                <Route path='polls/:id' component={Poll} />
+                <Route path='/leaderboard' component={Leaderboard} />
+                <Route path='/poll/:id' component={Poll} />
                 <Route path='/add' component={AddPoll} />
               </div>
             }

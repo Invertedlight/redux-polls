@@ -1,14 +1,19 @@
-/*.App {
-  text-align: left;
-}*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #252525;
+}
 
 .App-header {
   background-color: #222; 
-  height: 90px;
+  height: 70px;
   padding: 0px;
   color: white;
   margin-bottom: 20px;
-  padding-bottom: 10px;
+  padding: 0px 10px 20px 10px;
+  margin-top: 0px;
   text-decoration: none;
   	font-family: -apple-system,
 		BlinkMacSystemFont, Segoe UI, 
@@ -36,7 +41,13 @@
 .li-inline {
   display: inline-flex;
   align-items: flex-end;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
+.dashboard-heading {
+  padding-left: 1.5em;
+}
+
 .active {
 	font-weight: bold;
 	color: red;
@@ -44,7 +55,7 @@
 
 
 .nav-bottom {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 }
 .nav-bottom:hover {
 	color:green;
@@ -67,36 +78,10 @@ ul li {
   text-align: bottom;
 }
 
-/*
-.poll-category {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-}
-
-.poll-category li:hover {
-	color:red;
-}
-
-.questions li:hover {
-	color: blue;
-	font-size: 1.2em;
-}
-*/
-
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: #252525;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin-bottom: 10px;
 }
 
 @keyframes App-logo-spin {
@@ -202,7 +187,7 @@ ul {
 
 li {
   list-style-type: none;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
   text-decoration: none;
 }
 

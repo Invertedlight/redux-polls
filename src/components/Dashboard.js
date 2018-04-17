@@ -44,10 +44,13 @@ class Dashboard extends Component {
 							Answered
 					</button>
 				</div>
+				<h3 className='dashboard-heading'>
+				{showAnswered ? 'Answered Polls' : 'Pick a Poll to take' }
+				</h3>
 				<ul className='dashboard-list'>
 					{list.map((poll) => (
 						<li key={poll.id}>
-							<Link to={`polls/${poll.id}`}>
+							<Link to={`Poll/${poll.id}`}>
 								{poll.question}
 							</Link>
 						</li>
