@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getPercentage } from '../utils/helpers'
+import { handleAddAnswer } from '../actions/answers'
 
 const getVoteKeys = () => ['aVotes', 'bVotes', 'cVotes', 'dVotes']
 
@@ -8,7 +9,12 @@ class Poll extends Component {
 	handleAnswer = (answer) => {
 		const { poll, authedUser } = this.props
 		this.answered = true
-		console.log('Add Answer: ', answer)
+
+		this.props.dispatch(handleAddAnswer({
+			authedUser,
+			answer,
+			id: poll.id,
+		}))
 	}
 
 	render() {
@@ -35,25 +41,25 @@ class Poll extends Component {
 
 						return (
 							<li 
+								key={key}
 								onClick={() => {
 									if (vote === null && !this.answered) {
 										this.handleAnswer(key[0])
 									}
-								}}
-								key={key} className={`option ${vote === key[0] ? 'chosen' : ''}`}>
+								}}								 
+								className={`option ${vote === key[0] ? 'chosen' : ''}`}>
 								{vote === null 
                     ? poll[key]
                     : <div className='result'>
                         <span>{poll[key]}</span>
                         <span>{getPercentage(count, totalVotes)}% ({count})</span>
-                     
 											</div>}
 							</li>
 							)
 					})}
 				</ul>
 			</div>
-			)
+		)
 	}
 }
 
@@ -67,7 +73,7 @@ function mapStateToProps ({ authedUser, polls, users}, { match }){
 		}
 	}
 
-	const votes = ['aVotes', 'bVotes', 'cVotes', 'dVotes'].reduce((vote, key) => {
+	const vote = getVoteKeys().reduce((vote, key) => {
 		if (vote !== null) {
 			return vote[0]
 		}
@@ -79,7 +85,7 @@ function mapStateToProps ({ authedUser, polls, users}, { match }){
 
 	return {
 		poll,
-		votes,
+		vote,
 		authedUser,
 		authorAvatar: users[poll.author].avatarURL
 	}

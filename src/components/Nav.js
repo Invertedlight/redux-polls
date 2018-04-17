@@ -19,7 +19,7 @@ function Nav () {
 	        </NavLink>
         </li>
         <li className='nav-bottom'>
-        	<NavLink activeClassName='active' to='/add-poll'>
+        	<NavLink activeClassName='active' to='/add'>
         		Add Poll
       		</NavLink>
       	</li>

@@ -1,12 +1,13 @@
 /*.App {
   text-align: left;
-}
+}*/
 
 .App-header {
   background-color: #222; 
   height: 90px;
   padding: 0px;
   color: white;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   text-decoration: none;
   	font-family: -apple-system,
@@ -15,8 +16,12 @@
 		Cantarell, Helvetica Neue, sans-serif;
 }
 
-a {
-	color:white;
+ a {
+	color: white;
+}
+
+.dashboard-list a {
+  color: black;
 }
 
 .App-header a {
@@ -24,23 +29,20 @@ a {
 	font-size: 1.5em;
 }
 
+.App-header a:hover {
+  color:pink;
+}
+
+.li-inline {
+  display: inline-flex;
+  align-items: flex-end;
+}
 .active {
 	font-weight: bold;
 	color: red;
 }
 
-.App-header a:hover {
-	color:pink;
-}
 
-.li-inline {
-	display: inline-flex;
-	align-items: flex-end;
-}
-
-.li-inline li {
-
-}
 .nav-bottom {
 		margin-bottom: 15px;
 }
@@ -65,7 +67,7 @@ ul li {
   text-align: bottom;
 }
 
-
+/*
 .poll-category {
 	display: flex;
 	justify-content: center;
@@ -102,10 +104,10 @@ body {
   to { transform: rotate(360deg); }
 }
 
-a {
+/*a {
   text-decoration: none;
   color: #252525;
-}
+}*/
 
 .container {
   max-width: 1000px;
